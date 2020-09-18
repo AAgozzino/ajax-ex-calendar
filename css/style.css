@@ -1,0 +1,28 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.wrapper{
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin: 0 auto;
+}
+.wrapper h1{
+  text-align: center;
+}
+.nav{
+  display: flex;
+  justify-content: space-around;
+}
+
+#days{
+  align-self: center;
+}
+
+.holyday{
+  color: red;
+  font-weight: bold;
+}
