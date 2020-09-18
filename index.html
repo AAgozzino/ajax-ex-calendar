@@ -20,13 +20,12 @@
       </div>
 
       <ul id="days">
-        <li class="day holyday">1 Gennaio <span class="holyday-name">- Capodanno</span> </li>
       </ul>
     </div>
 
     <!-- TEMPLATE HANDLEBARS- days -->
     <script id="day-template" type="text/x-handlebars-template">
-      <li class="day">{{day}} {{month}} <span class="holyday-name">- {{name}}</span></li>
+      <li class="day" data-date="{{date}}">{{day}} {{month}} <span class="holiday-name"></span></li>
     </script>
     <!-- TEMPLATE HANDLEBARS- days -->
 
