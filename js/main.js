@@ -47,7 +47,7 @@ function printCalendar(date) {
 
     var context = {
       "day" : i,
-      "month" : date.format("MMMM"),
+      "month" : date.format("MMM"),
       "date": dateClone.format("YYYY-MM-DD")
     };
     var html= template(context);
@@ -79,10 +79,9 @@ function printHolidays(date) {
 
             var dataAttrDateSelector = $(".day[data-date='" + holidayDate + "']");
             dataAttrDateSelector.addClass("holiday");
-            dataAttrDateSelector.children(".holiday-name").text("- "+holidayName);
+            dataAttrDateSelector.find(".holiday-name").text(holidayName);
           }
         }
-
       },
       "error" : function(error){
         alert("Errore!");
