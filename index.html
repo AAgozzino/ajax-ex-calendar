@@ -12,25 +12,25 @@
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
-    <div class="wrapper">
-      <h1></h1>
-      <div class="nav">
-        <div class="prev"><i class="fas fa-arrow-left"></i> Precedente</div>
-        <div class="next">Successivo <i class="fas fa-arrow-right"></i></div>
-      </div>
+    <div class="wrapper-page">
+      <div class="wrapper-calendar">
+        <h1></h1>
+        <div class="nav">
+          <div class="prev"><i class="fas fa-arrow-left"></i> Precedente</div>
+          <div class="next">Successivo <i class="fas fa-arrow-right"></i></div>
+        </div>
 
-      <div id="days">
+        <div id="days">
 
+        </div>
       </div>
     </div>
-
     <!-- TEMPLATE HANDLEBARS- days -->
     <script id="day-template" type="text/x-handlebars-template">
         <div class="day" data-date="{{date}}">
           <div class="day-square" >{{day}} {{month}}</div>
           <div class="holiday-name"></div>
         </div>
-      <!-- <li class="day" data-date="{{date}}">{{day}} {{month}} <span class="holiday-name"></span></li> -->
     </script>
     <!-- TEMPLATE HANDLEBARS- days -->
 
