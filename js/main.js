@@ -9,11 +9,10 @@ $(document).ready(function(){
 
   // EVENT CLICK - show next month
   $(".next").click(function(){
-    var newDate = momentDate.add(1, "M");
-    var newDateMonth = newDate.format("MM");
-    if (newDateMonth == 1) {
+    if (momentDate.format("MM") == 12) {
       alert("Non è possibile visualizzare altre date");
     } else {
+      var newDate = momentDate.add(1, "M");
       printCalendar(newDate);
       printHolidays(newDate);
     }
@@ -22,16 +21,17 @@ $(document).ready(function(){
 
   // EVENT CLICK - show prev month
   $(".prev").click(function(){
-    var newDate = momentDate.subtract(1,"M");
-    var newDateMonth = newDate.format("MM");
-    if (newDateMonth == 12) {
+    if (momentDate.format("MM") == 1) {
       alert("Non è possibile visualizzare date precedenti");
     } else {
+      var newDate = momentDate.subtract(1, "M");
       printCalendar(newDate);
       printHolidays(newDate);
     }
   });
 });
+
+// FUNCTION - Print days of the month
 function printCalendar(date) {
   // Template day for calendar
   $("#days").html("");
@@ -55,7 +55,9 @@ function printCalendar(date) {
 
     dateClone.add(1, "days")
   }
-}
+};
+
+// FUNCTION ASINC- From API print holidays of the printed month
 function printHolidays(date) {
   var momentDateMonth = date.format("MM");
 
