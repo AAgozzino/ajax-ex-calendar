@@ -12,12 +12,24 @@ $(document).ready(function(){
     var newDate = momentDate.add(1, "M");
     var newDateMonth = newDate.format("MM");
     if (newDateMonth == 1) {
-      alert("Non è possibile visualizzare altre date")
+      alert("Non è possibile visualizzare altre date");
     } else {
       printCalendar(newDate);
       printHolidays(newDate);
     }
     //console.log(moment(newDate));
+  });
+
+  // EVENT CLICK - show prev month
+  $(".prev").click(function(){
+    var newDate = momentDate.subtract(1,"M");
+    var newDateMonth = newDate.format("MM");
+    if (newDateMonth == 12) {
+      alert("Non è possibile visualizzare date precedenti");
+    } else {
+      printCalendar(newDate);
+      printHolidays(newDate);
+    }
   });
 });
 function printCalendar(date) {
