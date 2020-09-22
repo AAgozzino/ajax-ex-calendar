@@ -33,13 +33,16 @@ $(document).ready(function(){
 
 // FUNCTION - Print days of the month
 function printCalendar(date) {
-  // Template day for calendar
+  // Empty list day
   $("#days").html("");
+  // New month header
   $("h1").text(date.format("MMMM YYYY"));
+  // Template day for calendar
   var source = $("#day-template").html();
   var template = Handlebars.compile(source);
-
+  // Moment date clone
   var dateClone = moment(date);
+  // Days in month from date clone
   var monthDays = date.daysInMonth();
   //console.log(monthDays);
   // Render day for calendar
@@ -57,13 +60,14 @@ function printCalendar(date) {
   }
 };
 
-// FUNCTION ASINC- From API print holidays of the printed month
+// FUNCTION ASINC- From API call print holidays of the printed month
 function printHolidays(date) {
   var momentDateMonth = date.format("MM");
 
   $.ajax(
     {
       "url": "https://flynn.boolean.careers/exercises/api/holidays",
+      // URL Query string 
       "data": {
         "year" : 2018,
         "month" : momentDateMonth - 1
